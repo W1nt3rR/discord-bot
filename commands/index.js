@@ -3,4 +3,5 @@ module.exports = {
 	ArgsInfo: require('./args-info'),
 	Help: require('./help'),
 	Commands: require('./commands'),
+	Add: require('./add'),
 };
