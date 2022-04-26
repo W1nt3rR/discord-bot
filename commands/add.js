@@ -13,6 +13,12 @@ module.exports = {
 		// msg.reply(`Pong! Time needed: ${duration.toFixed(3)}s`);
         var a = parseInt(args[0]);
         var b = parseInt(args[1]);
+		
+		if(args.length < 2)
+		{
+			return msg.reply(`You didnt proide 2 numbers`);
+		}
+
         msg.reply(`Sum of two numbers is ${a + b}`);
 	},
 };

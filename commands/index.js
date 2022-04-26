@@ -7,4 +7,5 @@ module.exports = {
 	Multiply: require('./mul'),
 	Divide: require('./div'),
 	Subtract: require('./sub'),
+	Greetings: require('./greetings'),
 };
