@@ -19,19 +19,22 @@ module.exports = {
 
         const argument = args[0];
 
-        if(randomNumber == undefined)
-        {
+        if(argument === "start") {
             randomNumber = Math.floor(Math.random() * 10) + 1;
             return msg.reply("The games have begun.")
-        } else {
-            if (argument == randomNumber){
-                randomNumber = undefined;
-                return msg.reply("Congratulations.");
-            }
-            else{
-                return msg.reply("You know nothing.");
-            }
         }
+
+        if(randomNumber == undefined) {
+            return msg.reply("Please start the game!");
+        }
+
+        if (argument == randomNumber) {
+            randomNumber = undefined;
+            return msg.reply("Congratulations.");
+        }
+        
+        return msg.reply("You know nothing.");
+
 		//msg.channel.send(`Greetings ${msg.author.username}, not nice to meet you`);
 	},
 };
