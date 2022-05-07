@@ -1,5 +1,6 @@
 const { Channel } = require("discord.js");
 var randomNumber;
+let numbers = {};
 module.exports = {
 	name: 'guess',
 	aliases: ['gamble'],
@@ -18,18 +19,19 @@ module.exports = {
 		// var random = Math.floor(Math.random() * 10) + 1;
 
         const argument = args[0];
+		const number = numbers[msg.author.id];
 
         if(argument === "start") {
-            randomNumber = Math.floor(Math.random() * 10) + 1;
+            numbers[msg.author.id] = Math.floor(Math.random() * 10) + 1;
             return msg.reply("The games have begun.")
         }
 
-        if(randomNumber == undefined) {
+        if(numbers[msg.author.id] == undefined) {
             return msg.reply("Please start the game!");
         }
 
-        if (argument == randomNumber) {
-            randomNumber = undefined;
+        if (argument == numbers[msg.author.id]) {
+            numbers[msg.author.id] = undefined;
             return msg.reply("Congratulations.");
         }
         
