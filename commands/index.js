@@ -9,4 +9,5 @@ module.exports = {
 	Subtract: require('./sub'),
 	Greetings: require('./greetings'),
 	Guessing: require('./gamble'),
+	Quote: require('./quote'),
 };
