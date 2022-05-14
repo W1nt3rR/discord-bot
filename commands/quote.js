@@ -9,17 +9,25 @@ module.exports = {
 	args:false,
 	usage:false,
 	// eslint-disable-next-line no-unused-vars
-	execute(msg, args) {
-		// const now = Date.now();
-		// const duration = (now - msg.createdTimestamp) / 1000;
-		// msg.reply(`Pong! Time needed: ${duration.toFixed(3)}s`);
+	async execute(msg, args) {
+		const author = args.join(" ");
+		
+		const response = await fetch(`https://api.quotable.io/random${author ? `?author=${author}` : ""}`); //get metoda default
 
-		fetch("https://api.quotable.io/random")
+		const result = await response.json();
+		msg.reply(result.content + ' author: ' + result.author);
+
+
+
+		/*
 			.then((response) => {
+				// console.log(response);
 				return response.json();
 			})
 			.then((result) => {
+				// console.log(result);
 				msg.reply(result.content + ' author: ' + result.author);
 			});
+			*/
 	},
 };
