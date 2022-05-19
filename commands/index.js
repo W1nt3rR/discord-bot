@@ -10,4 +10,5 @@ module.exports = {
 	Greetings: require('./greetings'),
 	Guessing: require('./gamble'),
 	Quote: require('./quote'),
+	GetMessage: require('./get-message'),
 };
